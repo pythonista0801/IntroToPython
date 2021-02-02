@@ -105,12 +105,19 @@ print(result)
 второй символ последней пары должен быть заменен подчеркиванием ('_'). 
 Примеры: 'abcd' -> ['ab', 'cd'], 'abcde' -> ['ab', 'cd', e_']"""
 
-my_str = "aaldfjlaflfdkgj lakjflksjalfk alskfjlkaj"
+my_str = "aaldfjlaflfdkgj lakjflksjalfk alskfjlkajl"
 length = len(my_str)
 print(length)
 
+if length % 2:
+    my_str = my_str + "_"
+print(my_str)
+
+my_list = []
+
 for index in range(length):
-    print(my_string[index*2], index*2+2)
+    my_list.append(my_str[index*2: index*2+2])
+print(my_list)
 
 
 """8. Дана строка my_str в которой символы не повторяются 
@@ -119,20 +126,49 @@ for index in range(length):
 часть строки между этими символами. my_str = "My_long str", 
 l_limit = "o", r_limit = "t" -> sub_str = "ng s" """
 
+my_string = 'Asdfgh.jkl_ertyui-xcnb'
+l_limit = 'f'
+r_limit = 'x'
+l_limit_place = my_string.find('f')
+r_limit_place = my_string.find('x')
+sub_string = my_string[l_limit_place:r_limit_place]
+print(f"Переменная sub_string с {l_limit_place} по {r_limit_place} места: {sub_string}")
 
-"look find and rfind"
-"srezy"
 
 """9. Дана строка my_str в которой символы МОГУТ повторяться и два символа l_limit, r_limit,
 которые точно находятся в этой строке. Причем l_limit левее чем r_limit.
 В переменную sub_str поместить НАИБОЛЬШУЮ часть строки между этими символами.
 my_str = "My long string", l_limit = "o", r_limit = "g" -> sub_str = "ng strin"."""
 
+my_string = "It's a very fascinating but difficult homework, indeed!"
+l_limit = 'a'
+r_limit = 'w'
+l_limit_place = my_string.find('a') # возвращает номер первого вхождения
+r_limit_place = my_string.rfind('t') # возвращает номер последнего вхождения
 
-"""look find and rfind
-srezy
+print(l_limit_place)
+print(r_limit_place)
 
-10. Дан список чисел. Определите, сколько в этом списке элементов,
-которые больше суммы двух своих соседей (слева и справа), и НАПЕЧАТАЙТЕ КОЛИЧЕСТВО таких элементов.
-Крайние элементы списка никогда не учитываются, поскольку у них недостаточно соседей.
+sub_string = my_string[l_limit_place:r_limit_place]
+print(f"Переменная sub_string с {l_limit_place} по {r_limit_place} места: {sub_string}")
+
+
+"""10. Дан список чисел. Определите, сколько в этом списке элементов,
+которые больше суммы двух своих соседей (слева и справа), и НАПЕЧАТАЙТЕ 
+КОЛИЧЕСТВО таких элементов. Крайние элементы списка никогда не учитываются, 
+поскольку у них недостаточно соседей.
 Для списка [2,4,1,5,3,9,0,7] ответом будет 3 потому что 4 > 2+1, 5 > 1+3, 9>3+0."""
+
+my_list = [2, 4, 1, 5, 3, 9, 0, 7]
+length = len(my_list)
+print(length)
+
+result = []
+
+for index in range(length-2):
+    if my_list[index + 1] > my_list[index] + my_list[index + 2]:
+        result.append(my_list[index+1])
+print(result)
+
+number_of_elements = len(result)
+print(number_of_elements)
