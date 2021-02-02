@@ -8,10 +8,13 @@ print(result)
 
 """2. Дано целое число (int). Определить сколько нулей в конце этого числа."""
 
-number = 1200000100
+number = 1200100000
 reverse_string = str(number)[::-1]
+
 result = 0
-for index in range(len(reverse_string)):
+length = len(reverse_string)
+
+for index in range(length):
     if reverse_string[index] != '0':
         break
     else:
