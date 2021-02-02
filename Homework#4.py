@@ -5,8 +5,8 @@
 
 my_list = [11, 22, 33, 55, 77, 111, 155, 188, 222]
 for value in my_list:
-    if value > 100:
-        print(value)
+	if value > 100:
+		print(value)
 
 """2) У вас есть список my_list с значениями типа int, и пустой список my_results.
 Добавить в my_results те значения, которые больше 100.
@@ -16,9 +16,9 @@ for value in my_list:
 my_list = [11, 22, 33, 55, 77, 111, 155, 188, 222]
 my_results = []
 for value in my_list:
-    if value > 100:
-        my_results.append(value)
-        print(my_results)
+	if value > 100:
+		my_results.append(value)
+		print(my_results)
 print(my_results)
 
 
@@ -29,23 +29,23 @@ print(my_results)
 
 my_list = [11, 22, 33, 55, 77, 111, 155, 188, 222]
 if len(my_list) < 2:
-    my_list.append(0)
-    print(my_list)
+	my_list.append(0)
+	print(my_list)
 elif len(my_list) >= 2:
-    my_list.append(my_list[-1] + my_list[-2])
-    print(my_list)
+	my_list.append(my_list[-1] + my_list[-2])
+	print(my_list)
 else:
-    print("Что-то пошло не так")
+	print("Что-то пошло не так")
 
 my_list = [11]
 if len(my_list) < 2:
-    my_list.append(0)
-    print(my_list)
+	my_list.append(0)
+	print(my_list)
 elif len(my_list) >= 2:
-    my_list.append(my_list[-1] + my_list[-2])
-    print(my_list)
+	my_list.append(my_list[-1] + my_list[-2])
+	print(my_list)
 else:
-    print("Что-то пошло не так")
+	print("Что-то пошло не так")
 
 
 #####################################################
@@ -66,7 +66,7 @@ for index in my_indexes:
 my_list = [11, 22, 33, 55, 77, 111, 155, 188, 222]
 my_indexes = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 for index in my_indexes:
-    print(my_list[index])
+	print(my_list[index])
 
 
 """6) У вас есть два списка my_list_1 и my_list_2 равной длинны и
@@ -82,7 +82,7 @@ my_list_1 = [1, 3, 5, 7, 9]
 my_list_2 = [2, 4, 6, 8, 10]
 my_indexes = [0, 1, 2, 3, 4]
 for index in my_indexes:
-    print((my_list_1[index], my_list_2[index]))
+	print((my_list_1[index], my_list_2[index]))
 
 #####################################################
 """Еще один пример - вложенные циклы (цикл в цикле).
@@ -110,6 +110,7 @@ my_string = '0123456789'
 result = []
 for symb_1 in my_string:
 	for symb_2 in my_string:
-		result.append(symb_1 + symb_2)
+		value = int(symb_1 + symb_2)
+		result.append(value)
 print(result)
 
