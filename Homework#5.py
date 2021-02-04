@@ -76,11 +76,10 @@ print(new_list)
 
 my_list = [11, 2, 3, 5, 6, 8]
 
-new_list = my_list.copy()
-first_symbol = new_list.pop(0)
-new_list.append(first_symbol)
+first_symbol = my_list.pop(0)
+my_list.append(first_symbol)
 
-print(new_list)
+print(my_list)
 
 """6. Дана строка в которой есть числа (разделяются пробелами).
 Например "43 больше чем 34 но меньше чем 56". Найти сумму ВСЕХ ЧИСЕЛ (А НЕ ЦИФР) в этой строке.
@@ -90,14 +89,13 @@ my_string = "56 is greater than 23 but less than 78"
 my_list = my_string.split()
 print(my_list)
 numbers = []
+
 for value in my_list:
-    try:
-        if value.isdigit:
-            value = int(value)
-            numbers.append(value)
-    except:
-        print("oops")
+    if value.isdigit():
+        value = int(value)
+        numbers.append(value)
 print(numbers)
+
 result = sum(numbers)
 print(result)
 
@@ -132,8 +130,8 @@ l_limit = "o", r_limit = "t" -> sub_str = "ng s" """
 my_string = 'Asdfgh.jkl_ertyui-xcnb'
 l_limit = 'f'
 r_limit = 'x'
-l_limit_place = my_string.find('f')
-r_limit_place = my_string.find('x')
+l_limit_place = my_string.find(l_limit)
+r_limit_place = my_string.find(r_limit)
 sub_string = my_string[l_limit_place:r_limit_place]
 print(f"Переменная sub_string с {l_limit_place} по {r_limit_place} места: {sub_string}")
 
@@ -146,8 +144,8 @@ my_str = "My long string", l_limit = "o", r_limit = "g" -> sub_str = "ng strin".
 my_string = "It's a very fascinating but difficult homework, indeed!"
 l_limit = 'a'
 r_limit = 'w'
-l_limit_place = my_string.find('a') # возвращает номер первого вхождения
-r_limit_place = my_string.rfind('t') # возвращает номер последнего вхождения
+l_limit_place = my_string.find(l_limit) # возвращает номер первого вхождения
+r_limit_place = my_string.rfind(r_limit) # возвращает номер последнего вхождения
 
 print(l_limit_place)
 print(r_limit_place)
