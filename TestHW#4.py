@@ -32,6 +32,12 @@ new_value.append(6)
 print(values)
 # [1, 2, 3, 4, 5, 6]
 
+values = [1,2,3,4,5]
+new_value = values.copy()
+new_value.append(6)
+print(values)
+# [1, 2, 3, 4, 5]
+
 values = [0] * 6
 values[0] = 1
 print(values)
