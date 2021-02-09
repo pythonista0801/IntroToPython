@@ -67,7 +67,7 @@ for item in persons:
     if item["age"] > min_age:
         pass
     elif item["age"] == min_age:
-        print(f"Имя самого молодого человека - {item["name"]}")
+        print(f"Имя самого молодого человека - {item['name']}")
 
 print("------------------------------------------------------------------")
 
@@ -76,9 +76,26 @@ print("------------------------------------------------------------------")
 all_names = []
 for person in persons:
     all_names.append(person["name"])
-    print(all_names)
+print(all_names)
 
-for i in all_names:
+length = []
+
+for name in all_names:
+    length.append(len(name))
+print(length)
+
+max_length = max(length)
+
+for name in all_names:
+    if len(name) < max_length:
+        pass
+    elif len(name) == max_length:
+        print(f"Самое длинное имя - {name}")
+
+print("-----------------------------------------------------------------")
+
+"в) Посчитать среднее количество лет всех людей из списка."
+
 
 
 """Если циклом пройтись по persons и прочитать person["age"] 
