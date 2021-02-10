@@ -111,7 +111,7 @@ number = len(all_age_list)
 print(number)
 
 average_age = sum(all_age_list)/number
-print(average_age)
+print(f"Среднее количество лет -  {average_age}")
 
 print("----------------------------------------------------------end-of-4v")
 """
