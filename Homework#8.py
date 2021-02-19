@@ -95,7 +95,7 @@ def create_spaces(rand_str):
     rand_str = "".join(random_string_to_list)
     return rand_str
 
-def modify_word(word, capitalize_percentage=0.2):
+def modify_word(word, capitalize_percentage=0.3):
     if rnd.random() < capitalize_percentage:
         word = word.capitalize()
     return word
