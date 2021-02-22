@@ -20,11 +20,11 @@ print(e_mail)
 
 >>>miller.249@sgdyyur.com"""
 
-names = ["king", "miller", "kean", "jones", "smith", "black"]
-domains = ["net", "com", "ua"]
-
 import random as rnd
 import string
+
+names = ["king", "miller", "kean", "jones", "smith", "black"]
+domains = ["net", "com", "ua"]
 
 #def random_string():
     #letters = string.ascii_lowercase
@@ -55,12 +55,11 @@ print("----------------------------------------------------enf-of-1")
 """
 
 def random_string(min_limit: int, max_limit: int):
-    alphabet = string.ascii_lowercase
-    count = rnd.randint(min_limit, max_limit)
-    str = alphabet*count
+    selection = [rnd.choice(string.ascii_lowercase) for i in range(rnd.randint(min_limit, max_limit))]
+    str = ''.join(selection)
     return str
 
-print(random_string(2,5))
+print(random_string(35, 70))
 
 print("------------------------------------------------------end-of-2")
 
@@ -114,25 +113,16 @@ def create_list():
         my_list.append(rnd.randint(100, 999))
     return my_list
 my_list = create_list()
-print(my_list)
 
 def change_to_list(rand_str):
     rand_str_split = rand_str.split(' ')
     return rand_str_split
-
-rand_str = create_random_str(True)
-rand_str = create_spaces(rand_str)
-rand_str = modify_str(rand_str)
-rand_str = change_to_list(rand_str)
 
 def merge_lists(rand_str):
     outcome = rand_str + create_list()
     rnd.shuffle(outcome)
     outcome = ' '.join(str(elem) for elem in outcome)
     return outcome
-
-rand_str = merge_lists(rand_str)
-print(rand_str)
 
 punctuation = ['.',',',':',';','-','/n']
 
@@ -150,5 +140,10 @@ def add_punctuation(rand_str):
     rand_str = " ".join(random_string_to_list)
     return rand_str
 
+rand_str = create_random_str(True)
+rand_str = create_spaces(rand_str)
+rand_str = modify_str(rand_str)
+rand_str = change_to_list(rand_str)
+rand_str = merge_lists(rand_str)
 rand_str = add_punctuation(rand_str)
 print(rand_str)
