@@ -27,8 +27,8 @@ def create_spaces(rand_str):
     return rand_str
 
 
-def modify_word(word, comma_percentage=0.2):
-    if random.random() < comma_percentage:
+def modify_word(word, capitalize_percentage=0.2):
+    if random.random() < capitalize_percentage:
         word = word.capitalize()
     return word
 
