@@ -70,9 +70,9 @@ min_age = min(all_age_list)
 print(min_age)
 
 for item in persons:
-    if item["age"] > min_age:
-        pass
-    elif item["age"] == min_age:
+    # if item["age"] > min_age:
+    #     pass
+    if item["age"] == min_age:
         print(f"Имя самого молодого человека - {item['name']}")
 
 print("----------------------------------------------------------end-of-4a")
