@@ -1,4 +1,5 @@
 """"""
+
 """
 1. Считать данные из файла names.txt и поместить в список только фамилии из файла.
 Каждая строка файла содержит номер, фамилию, страну, некоторое число (таблица взята с википедии).
@@ -48,16 +49,21 @@ def create_my_dict():
 my_dict = create_my_dict()
 print(my_dict)
 
-def write_json(filename, my_dict):
-    filename = "my_dict_write.json"
-    with open(filename, "w") as js_file:
-        json.dump(my_dict, js_file, indent=2)
-
-
-# print(type(json.dumps(data)))
-
+filename = "my_dict_write.json"
+with open(filename, "w") as js_file:
+    json.dump(my_dict, js_file, indent=2)
 
 """
 3. Написать функцию generate_and_write_json которая принимает один параметр - полный путь к файлу.
 Cгенерировать данные для записи с помощью функции из пункта 2 и записать в данный файл.
 """
+
+filepath = "C:\\Users\\CNata\\PycharmProjects\\IntroToPython\\my_dict_function.json"
+
+
+def generate_and_write_json(filepath):
+    with open(filepath, "w") as new_file:
+        json.dump(create_my_dict(), new_file, indent=2)
+
+generate_and_write_json(filepath)
+
