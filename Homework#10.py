@@ -8,7 +8,6 @@ import json
 Если расширение не соответствует заданным, то вывести текст "Unsupported file format"
 """
 
-
 def read_file(file_path):
     extension = file_path.rsplit('.',1)[-1]
     if extension == "txt":
