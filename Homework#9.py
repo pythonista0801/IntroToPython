@@ -36,6 +36,7 @@ with open(os.path.join(path, "names.txt"), "r") as file_txt:
 """
 
 def create_my_dict():
+    my_dict = {}
     keys = []
     values = []
     for i in range(random.randint(5, 20)):

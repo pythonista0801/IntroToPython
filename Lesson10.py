@@ -25,21 +25,21 @@ assert len(data[0]) > 1, "One column!!!"
 # print(data)
 #
 # data.append({'Name': 'Tod', 'Age': '30', 'Value': '12.4', 'Text': 'qwerty'})
-#
-# with open(filename, 'w', encoding="utf-8") as csv_file:
-#     fieldnames = data[0].keys()
-#     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-#     writer.writeheader()
-#     writer.writerows(data)
 
-# data = read_csv(filename)
-#
-# # data.append(["Jack", 45, 10.0])
-# data[0].append("Text")
-# for row in data[1:]:
-#     row.append("test")
-#
-# write_csv(filename, data)
+with open(filename, 'w', encoding="utf-8") as csv_file:
+    fieldnames = data[0].keys()
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(data)
+
+data = read_csv(filename)
+
+data.append(["Jack", 45, 10.0])
+data[0].append("Text")
+for row in data[1:]:
+    row.append("test")
+
+write_csv(filename, data)
 
 
 # ДЗ
