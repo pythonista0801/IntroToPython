@@ -10,7 +10,7 @@ import json
 import random
 import string
 
-path = "C:\\Users\\CNata\\PycharmProjects\\IntroToPython\\"
+path = "C:\\Users\\CNata\\PycharmProjects\\IntroToPython\\names.txt"
 
 # files = [file for file in os.listdir(path) if os.path.isfile(os.path.join(path, file))]
 # print(files)
@@ -18,12 +18,18 @@ path = "C:\\Users\\CNata\\PycharmProjects\\IntroToPython\\"
 # for file in sorted(files):
 #     file_path = os.path.join(path, file)
 
-with open(os.path.join(path, "names.txt"), "r") as file_txt:
-    lines = file_txt.readlines()
-    result = []
-    for line in lines:
-        result.append(line.split('\t')[1])
-    print(result)
+
+def read_last_names(path):
+    with open(path, "r") as file_txt:
+        lines = file_txt.readlines()
+        result = []
+        for line in lines:
+            result.append(line.split('\t')[1])
+    return result
+
+
+last_names = read_last_names(path)
+print(last_names)
 
 """ 
 2. Создать функцию для записи в файл json.
@@ -34,25 +40,37 @@ with open(os.path.join(path, "names.txt"), "r") as file_txt:
 или True/False. Выбор значения должен быть равновероятным. Т.е. вероятность того, что значение будет целым
 такая же, как и вероятность того, что будет типа float или типа bool.
 """
+filename = "my_dict_write.json"
+
+
+def write_json_file(filename, my_dict):
+    with open(filename, "w") as js_file:
+        json.dump(my_dict, js_file, indent=2)
+
+
+def random_key():
+    selection = [random.choice(string.ascii_lowercase) for n in range(5)]
+    return ''.join(selection)
+
+
+def random_value():
+    value = random.choice(["int", "float", "bool"])
+    if value == "int":
+        value = random.randint(-100, 100)
+    elif value == "float":
+        value = random.random()
+    elif value == "bool":
+        value = random.choice([True, False])
+    return value
+
 
 def create_my_dict():
-    my_dict = {}
-    keys = []
-    values = []
-    for i in range(random.randint(5, 20)):
-        list = [random.randint(-100, 100), random.random(), random.choice([True, False])]
-        selection = [random.choice(string.ascii_lowercase) for n in range(5)]
-        keys.append(''.join(selection))
-        values.append(random.choice(list))
-    my_dict = dict(zip(keys, values))
-    return my_dict
+    return {random_key(): random_value() for k in range(random.randint(5, 20))}
+
 
 my_dict = create_my_dict()
 print(my_dict)
 
-filename = "my_dict_write.json"
-with open(filename, "w") as js_file:
-    json.dump(my_dict, js_file, indent=2)
 
 """
 3. Написать функцию generate_and_write_json которая принимает один параметр - полный путь к файлу.
