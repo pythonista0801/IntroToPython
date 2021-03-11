@@ -116,11 +116,13 @@ print(my_str)
 
 my_list = []
 
-for index in range(length):
-    my_list.append(my_str[index*2: index*2+2])
+for index in range(0, length, 2):
+    my_list.append(my_str[index: index*2+2])
 print(my_list)
 
-
+# for index in range(length):
+#     my_list.append(my_str[index*2: index*2+2])
+# print(my_list)
 """8. Дана строка my_str в которой символы не повторяются 
 и два символа l_limit, r_limit, которые точно находятся в этой строке. 
 Причем l_limit левее чем r_limit. В переменную sub_str поместить 

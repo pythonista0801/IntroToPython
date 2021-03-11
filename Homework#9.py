@@ -22,9 +22,7 @@ path = "C:\\Users\\CNata\\PycharmProjects\\IntroToPython\\names.txt"
 def read_last_names(path):
     with open(path, "r") as file_txt:
         lines = file_txt.readlines()
-        result = []
-        for line in lines:
-            result.append(line.split('\t')[1])
+        result = [line.split('\t')[1] for line in lines]
     return result
 
 
