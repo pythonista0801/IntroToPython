@@ -40,7 +40,6 @@ print(last_names)
 """
 filename = "my_dict_write.json"
 
-
 def write_json_file(filename, my_dict):
     with open(filename, "w") as js_file:
         json.dump(my_dict, js_file, indent=2)
