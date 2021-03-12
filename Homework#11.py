@@ -35,14 +35,6 @@ print(result)
 #3. Написать функцию сортировки по дате смерти из поля "years".
 # Обратите внимание на сокращение BC. - это означает до н.э.
 
-# def find_numbers(sort_dict: dict):
-#     values = sort_dict["years"]
-#     all_values = re.findall(r"[0-9]+", values)
-#     return int(all_values)
-#
-# result = sorted(data, key = find_numbers)
-# print(result)
-
 
 def sort_key_by_year(sort_dict: str) -> int:
     year = re.match(".+\s(\d+)\D*$", sort_dict).group(1)
