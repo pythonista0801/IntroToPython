@@ -26,21 +26,39 @@ data = read_json('data.json')
 #Если фамилии нет, то использовать имя, например Euclid.
 
 def sort_key_by_name(sort_dict):
-    # if sort_dict["name"] == 1:
-    #     value = sort_dict["name"]
-    # else:
-    value = sort_dict["name"][-1]
+    value = sort_dict["name"].split(" ")[-1]
     return value
 
 result = sorted(data, key = sort_key_by_name)
-
 print(result)
 
-def turn_to_negative(my_dict):
-    if 'BC' in my_dict['years']:
+#3. Написать функцию сортировки по дате смерти из поля "years".
+# Обратите внимание на сокращение BC. - это означает до н.э.
+
+# def find_numbers(sort_dict: dict):
+#     values = sort_dict["years"]
+#     all_values = re.findall(r"[0-9]+", values)
+#     return int(all_values)
+#
+# result = sorted(data, key = find_numbers)
+# print(result)
 
 
-# def sort_by_bday(sort_dict):
-#     age = sort_dict["age"]
-#     years = re.findall(r'[0-9]+', age)
-#     return int(years[0])
+def sort_key_by_year(sort_dict: str) -> int:
+    year = re.match(".+\s(\d+)\D*$", sort_dict).group(1)
+    year = -int(year) if ("bc" in sort_dict.lower()) else int(year)
+    return year
+
+
+res = sorted(data, key=lambda x: d_retr(x["years"]))
+print(res)
+
+
+#4. Написать функцию сортировки по количеству слов в поле "text"
+def sort_key_by_len_text(sort_dict):
+    text_string = sort_dict["text"]
+    result = len(re.findall(r'\w+', text_string))
+    return result
+
+result = sorted(data, key=sort_key_by_len_text, reverse = True)
+print(result)
