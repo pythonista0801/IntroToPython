@@ -50,7 +50,7 @@ def sort_key_by_year(sort_dict: str) -> int:
     return year
 
 
-res = sorted(data, key=lambda x: d_retr(x["years"]))
+res = sorted(data, key=lambda x: sort_key_by_year(x["years"]))
 print(res)
 
 
